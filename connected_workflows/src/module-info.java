@@ -1,0 +1,2 @@
+module connected_workflows {
+}
