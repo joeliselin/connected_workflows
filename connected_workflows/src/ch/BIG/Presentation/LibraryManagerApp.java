@@ -22,7 +22,7 @@ public class LibraryManagerApp {
 			"Software Architecture: A Comprehensive Framework and Guide for Practitioners",
 			"Design Patterns - Elements of Reusable Object-Oriented Software",
 			"Effective Java � Programming Language Guide" };
-	
+	 
 	private static final String[] bookPrices = { "CHF 79.90", "CHF 81.40", "CHF 84.90", "CHF 74.90" };
 	private static final String[] bookISBNs = { "3486721402", "3642197353", "0201633612", "0321356683" };
 	
