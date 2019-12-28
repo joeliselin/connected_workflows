@@ -1,6 +1,6 @@
-package ch.BIG.Business;
+//package ch.BIG.Business;
 
-public class ProjectFactory {
+//public class ProjectFactory {
 
 }
 
