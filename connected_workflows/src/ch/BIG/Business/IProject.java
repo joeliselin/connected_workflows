@@ -1,17 +1,10 @@
-package ch.BIG.Business;
-
-public interface IProject {
-
-}
-
-
 /**
  * Interface for media such as book and magazine.
  * 
  * @author Arif Chughtai
  */
 
-package org.arifchughtai.training.casestudies.librarymanager.v2.business;
+package ch.BIG.Business;
 
 // Interface declaration
 public interface IProject {
@@ -21,7 +14,7 @@ public interface IProject {
 	/**
 	 * Set the title
 	 */
-	public void setStatus(String status);
+	public void setState(String state);
 
 	/**
 	 * Set the price
@@ -33,7 +26,7 @@ public interface IProject {
 	/**
 	 * @return the title
 	 */
-	public String getStatus();
+	public String getState();
 
 	/**
 	 * @return the price

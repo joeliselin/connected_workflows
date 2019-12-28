@@ -1,26 +1,20 @@
-//package ch.BIG.Business;
-
-//public class ProjectFactory {
-
-}
-
-
 /**
  * Class implementing a factory for Media implementations.
  * 
  * @author Arif Chughtai
  */
 
-package org.arifchughtai.training.casestudies.librarymanager.v2.business;
+//import static org.arifchughtai.training.casestudies.librarymanager.v2.persistence.PersistenceBase.TITLE_KEY;
+//import static org.arifchughtai.training.casestudies.librarymanager.v2.persistence.PersistenceBase.PRICE_KEY;
 
-import static org.arifchughtai.training.casestudies.librarymanager.v2.persistence.PersistenceBase.TITLE_KEY;
-import static org.arifchughtai.training.casestudies.librarymanager.v2.persistence.PersistenceBase.PRICE_KEY;
+//import static org.arifchughtai.training.casestudies.librarymanager.v2.persistence.PersistenceBase.TITLE_INDEX;
+//import static org.arifchughtai.training.casestudies.librarymanager.v2.persistence.PersistenceBase.PRICE_INDEX;
 
-import static org.arifchughtai.training.casestudies.librarymanager.v2.persistence.PersistenceBase.TITLE_INDEX;
-import static org.arifchughtai.training.casestudies.librarymanager.v2.persistence.PersistenceBase.PRICE_INDEX;
+////
 
-import org.arifchughtai.training.casestudies.librarymanager.v2.persistence.DAOFactory;
-import org.arifchughtai.training.casestudies.librarymanager.v2.persistence.MediaDAO;
+package ch.BIG.Business;
+import ch.BIG.Persistence.ProjectDAOFactory;
+import ch.BIG.Persistence.IProjectDAO;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -35,14 +29,14 @@ public class ProjectFactory {
 	/**
 	 * The DAO instance 
 	 */
-	private ProjectDAO theDAO = null;
+	private IProjectDAO theDAO = null;
 	
 	
 	/**
 	 * Default constructor
 	 */
 	private ProjectFactory() {
-		theDAO = DAOFactory.getInstance().createProjectDAO();
+		theDAO = ProjectDAOFactory.getInstance().createIProjectDAO();
 	}
 	
 	/**
@@ -58,22 +52,22 @@ public class ProjectFactory {
 	
 	/**
 	 * Creates a concrete media object
-	 * @param status
+	 * @param state
 	 * @param projectID
 	 * @return IProject
 	 */	
 	public IProject createIProject(){
-		return new ExternProject("N/A", "N/A", "NA");	// Concrete Media should be configured.
+		return new ExternProject("ZUSPA", "COOP", "MIGROS");	// Concrete Media should be configured.
 	}
 	
 	/**
 	 * Creates a concrete media object with title and price set
-	 * @param status
+	 * @param state
 	 * @param projectID
 	 * @return IProject
 	 */	
-	public IProject createIProject(String status){ 		//String price, String isbn)
-		return new InternProject(status);	// Concrete Media should be configured.
+	public IProject createIProject(String state, String projectID){ 		//String price, String isbn)
+		return new ExternProject(state);	// Concrete Media should be configured.
 	}	
 	
 	/**
@@ -82,7 +76,7 @@ public class ProjectFactory {
 	 */
 	public void saveIProject(IProject project){		
 		theDAO.insertIProjectAsArray(projectToArray(project));
-		// theDAO.insertMediaAsMap(mediaToMap(media))
+		theDAO.insertIProjectAsMap(projectToMap(project));
 	}
 	
 	/**
@@ -93,14 +87,14 @@ public class ProjectFactory {
 	public IProject findIProject(int projectID){
 		
 		String[] projectData = theDAO.selectIProjectAsArray(projectID);
-		// Map<String, String> mediaData = theDAO.selectMediaAsMap(mediaId);
+		Map<String, String> projectData = theDAO.selectIProjectAsMap(projectID);
 		
 		if(projectData == null){
 			return null;
 		}
 		
 		return arrayToIProject(projectData);
-		// return mapToMedia(mediaData);
+		return mapToIProject(projectData);
 	}
 	
 	/**
@@ -111,8 +105,8 @@ public class ProjectFactory {
 	private String[] projectToArray(IProject project){		
 		String[] projectData = new String[2];
 		
-		projectData[STATUS_INDEX] = project.getStatus();
-		//projectData[PRICE_INDEX] = project.getPrice();	
+		projectData[STATE_INDEX] = project.getState();
+		projectData[ID_INDEX] = project.getProjectID();	
 		
 		return projectData;
 	}
@@ -123,7 +117,7 @@ public class ProjectFactory {
 	 * @return Array containing data of given Media
 	 */
 	private IProject arrayToIProject(String[] projectData){		
-		IProject project = createIProject(projectData[STATUS_INDEX]); //, mediaData[PRICE_INDEX], "N/A");		
+		IProject project = createIProject(projectData[STATE_INDEX], projectData[ID_INDEX]);		
 		
 		return project;
 	}
@@ -136,8 +130,8 @@ public class ProjectFactory {
 	private Map<String, String> projectToMap(IProject project){
 		Map <String, String> projectData = new HashMap<String, String>();
 		
-		projectData.put(STATUS_KEY, project.getStatus());
-		//mediaData.put(PRICE_KEY, media.getPrice());
+		projectData.put(STATE_KEY), project.getState());
+		projectData.put(ID_KEY), project.getProjectID());
 		
 		return projectData;
 	}
@@ -149,7 +143,7 @@ public class ProjectFactory {
 	 */
 	private IProject mapToIProject(Map<String, String> projectData){
 		
-		IProject project = createIProject(projectData.get(STATUS_KEY)); //, mediaData.get(PRICE_KEY), "N/A");		
+		IProject project = createIProject(projectData.get(STATE_KEY), projectData.get(ID_KEY));		
 		
 		return project;
 	}

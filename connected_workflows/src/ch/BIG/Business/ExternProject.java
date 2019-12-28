@@ -1,10 +1,3 @@
-package ch.BIG.Business;
-
-public class ExternProject {
-
-}
-
-
 /**
  * Class implementing a book.
  * 
@@ -12,7 +5,7 @@ public class ExternProject {
  */
 
 // Package declaration
-package org.arifchughtai.training.casestudies.librarymanager.v2.business;
+package ch.BIG.Business;
 
 // Class declaration
 class ExternProject extends AbstractProject {
@@ -22,24 +15,24 @@ class ExternProject extends AbstractProject {
 	/**
 	 * The isbn.
 	 */
-	private String internAffiliation;
+	private String externAffiliation;
 
 	// Special constructor
-	public ExternProject(String status, String projectID) //, String isbn) 
+	public ExternProject(String state, String projectID) //, String isbn) 
 	{
-		super(title, price);	// Call constructor of parent class (constructor chaining)
+		super(state, projectID);	// Call constructor of parent class (constructor chaining)
 
-		setIsbn(isbn);
+		//setIsbn(isbn);
 	}
 
 	// Setter methods
 
 	/**
 	 * @param internAffiliation
-	 *            the isbn to set
+	 *            //the isbn to set
 	 */
-	public void setInternAffiliation(String internAffiliation) {
-		this.internAffiliation = internAffiliation;
+	public void setExternAffiliation(String externAffiliation) {
+		this.externAffiliation = externAffiliation;
 	}
 
 	// Getter methods
@@ -47,7 +40,7 @@ class ExternProject extends AbstractProject {
 	/**
 	 * @return the isbn
 	 */
-	public final String getInternAffiliation() {
-		return internAffiliation;
+	public final String getExternAffiliation() {
+		return externAffiliation;
 	}
 }
