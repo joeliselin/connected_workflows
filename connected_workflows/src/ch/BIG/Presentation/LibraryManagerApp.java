@@ -13,10 +13,10 @@ public class LibraryManagerApp;
  * @author Arif Chughtai
  */
 
-package  org.arifchughtai.training.casestudies.librarymanager.v2.presentation;
+package org.arifchughtai.training.casestudies.librarymanager.v2.presentation;
 
 
-public class LibraryManagerApp {
+public class LibraryManagerApp  {
 
 	// The test data
 	private static final String[] bookTitles = {
