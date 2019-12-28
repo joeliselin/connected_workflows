@@ -28,7 +28,7 @@ public class ConsoleClient {
 	public ConsoleClient() {
 		theMediaFactory = MediaFactory.getInstance();
 	}
-
+s
 	// Methods	
 	
 	/**
