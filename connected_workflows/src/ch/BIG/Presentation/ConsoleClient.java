@@ -18,8 +18,7 @@ import org.arifchughtai.training.casestudies.librarymanager.v2.business.Media;
 import org.arifchughtai.training.casestudies.librarymanager.v2.business.MediaFactory;
 
 
-public class ConsoleClient {
-	
+
 	// MediaFactory to use
 	private MediaFactory theMediaFactory = null;
 	
