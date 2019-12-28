@@ -4,16 +4,16 @@ public class LibraryManagerApp;
 
 {
 
-}
+}  
 
 
 /**
  * Class implementing the main method of the LibraryManager application.
- * 
+ * rgrg
  * @author Arif Chughtai
  */
 
-package org.arifchughtai.training.casestudies.librarymanager.v2.presentation;
+package  org.arifchughtai.training.casestudies.librarymanager.v2.presentation;
 
 
 public class LibraryManagerApp {
