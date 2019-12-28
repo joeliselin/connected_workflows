@@ -1,4 +1,4 @@
-package connected_workflows;
+package ch.BIG.App;
 
 public class Main_Class {
 	
