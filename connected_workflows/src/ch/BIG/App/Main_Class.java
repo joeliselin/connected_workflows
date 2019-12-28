@@ -6,10 +6,10 @@ public class Main_Class {
 	 	{
 	        // Prints "Hello, World" to the terminal window.
 	        System.out.println("Hello, World");
-	        System.out.println("test 2");
-	        System.out.println("test 2");
-	        System.out.println("test 2");
-	        System.out.println("test 2");
+	        System.out.println("test 3");
+	        System.out.println("test 3");
+	        System.out.println("test 3");
+	        System.out.println("test 3");
 	    }
 
 }
