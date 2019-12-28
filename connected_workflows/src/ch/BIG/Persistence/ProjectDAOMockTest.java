@@ -1,6 +1,6 @@
 /**
  * The class BookDAOMockTest is a class for testing the class BookDataAccessMock.
- * 
+ * Hallo Zemme
  * @author Arif Chughtai
  */
 
@@ -15,7 +15,7 @@ public class BookDAOMockTest {
 			"Analyse und Design mit der UML 2.5 - Objektorientierte Softwareentwicklung",
 			"Software Architecture: A Comprehensive Framework and Guide for Practitioners",
 			"Design Patterns - Elements of Reusable Object-Oriented Software",
-			"Effective Java – Programming Language Guide" };
+			"Effective Java â€“ Programming Language Guide" };
 	
 	private final String[] bookPrices = { "CHF 79.90", "CHF 81.40", "CHF 84.90", "CHF 74.90" };
 	private final String[] bookISBNs = { "3486721402", "3642197353", "0201633612", "0321356683" };
