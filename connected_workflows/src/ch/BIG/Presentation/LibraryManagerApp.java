@@ -1,6 +1,8 @@
 package ch.BIG.Presentation;
 
-public class LibraryManagerApp {
+public class LibraryManagerApp;
+
+{
 
 }
 
